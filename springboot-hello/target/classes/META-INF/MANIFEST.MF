@@ -1,11 +1,10 @@
 Manifest-Version: 1.0
 Implementation-Title: springboot-hello
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: ￨ﾵﾵ￥ﾘﾉ￦ﾕﾏ
+Built-By: matte
 Implementation-Vendor-Id: com.zhaojm
-Build-Jdk: 1.8.0_121
-Implementation-URL: http://projects.spring.io/spring-boot/springboot-c
- on/springboot-hello/
+Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springboot-con/springboot-hello
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
