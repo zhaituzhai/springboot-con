@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 @Component // 让此切面成为Spring容器管理的Bean
 public class LogAspect {
 
-    @Pointcut("@annotation(com.zhaojm.spring.ch2.action.Action)")
+    @Pointcut("@annotation(com.zhaojm.aop.Action)")
     public void annotationPointCut() {
     };
 
-    @After("annotationPointCut()")
+    @After(value = "annotationPointCut()")
     public void after(Joinpoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getStaticPart();
         Method method = signature.getMethod();
@@ -26,7 +26,7 @@ public class LogAspect {
         System.out.println("注解式拦截 " + action.name());
     }
 
-    @Before("execution(*com.zhaojm.spring.ch2.service.DemoMethodService.*(..))")
+    @Before("execution(* com.zhaojm.aop.DemoMethodService.*(..))")
     public void before(Joinpoint joinpoint) {
         MethodSignature signature = (MethodSignature) joinpoint.getStaticPart();
         Method method = signature.getMethod();
