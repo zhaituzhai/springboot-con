@@ -20,7 +20,7 @@ public class LogAspect {
 
     @After(value = "annotationPointCut()")
     public void after(JoinPoint joinPoint) {
-        MethodSignature signature = (MethodSignature) joinPoint.getStaticPart();
+        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         Action action = method.getAnnotation(Action.class);
         System.out.println("注解式拦截 " + action.name());
@@ -28,7 +28,7 @@ public class LogAspect {
 
     @Before("execution(* com.zhaojm.aop.DemoMethodService.*(..))")
     public void before(JoinPoint joinpoint) {
-        MethodSignature signature = (MethodSignature) joinpoint.getStaticPart();
+        MethodSignature signature = (MethodSignature) joinpoint.getSignature();
         Method method = signature.getMethod();
         System.out.println("方法规则式拦截，" + method.getName());
     }
