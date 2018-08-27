@@ -2,7 +2,7 @@ package com.zhaojm.aop;
 
 import java.lang.reflect.Method;
 
-import org.aopalliance.intercept.Joinpoint;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,10 +16,10 @@ public class LogAspect {
 
     @Pointcut("@annotation(com.zhaojm.aop.Action)")
     public void annotationPointCut() {
-    };
+    }
 
     @After(value = "annotationPointCut()")
-    public void after(Joinpoint joinPoint) {
+    public void after(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getStaticPart();
         Method method = signature.getMethod();
         Action action = method.getAnnotation(Action.class);
@@ -27,7 +27,7 @@ public class LogAspect {
     }
 
     @Before("execution(* com.zhaojm.aop.DemoMethodService.*(..))")
-    public void before(Joinpoint joinpoint) {
+    public void before(JoinPoint joinpoint) {
         MethodSignature signature = (MethodSignature) joinpoint.getStaticPart();
         Method method = signature.getMethod();
         System.out.println("方法规则式拦截，" + method.getName());

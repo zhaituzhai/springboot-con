@@ -22,5 +22,33 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/Maven/repositoryself/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.aspectj"/>
+			<attribute name="maven.artifactId" value="aspectjweaver"/>
+			<attribute name="maven.version" value="1.8.13"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Maven/repositoryself/org/aspectj/aspectjrt/1.8.13/aspectjrt-1.8.13.jar" sourcepath="D:/Maven/repositoryself/org/aspectj/aspectjrt/1.8.13/aspectjrt-1.8.13-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.aspectj"/>
+			<attribute name="maven.artifactId" value="aspectjrt"/>
+			<attribute name="maven.version" value="1.8.13"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Maven/repositoryself/org/aspectj/aspectjweaver/1.8.9/aspectjweaver-1.8.9.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="aspectjweaver-1.8.9.jar"/>
+			<attribute name="maven.groupId" value="org.aspectj"/>
+			<attribute name="maven.artifactId" value="aspectjweaver"/>
+			<attribute name="maven.version" value="1.8.9"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

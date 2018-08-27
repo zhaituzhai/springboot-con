@@ -17,5 +17,5 @@ import java.lang.annotation.Target;
 @Documented
 public @interface Action {
 
-    String name();
+    String name() default "";
 }
