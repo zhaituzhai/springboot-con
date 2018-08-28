@@ -19,5 +19,6 @@
 		<module>springboot-hello</module>
 		<module>spring-aop</module>
 		<module>spring-bean</module>
+		<module>spring-el</module>
 	</modules>
 </project>
