@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhaojm.data.mapper.IDealStatueTableMapper">
+  <resultMap id="BaseResultMap" type="com.zhaojm.data.bean.DealStatueTableDTO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="deal_statues" jdbcType="VARCHAR" property="dealStatues" />
+    <result column="deal_name" jdbcType="VARCHAR" property="dealName" />
+    <result column="deal" jdbcType="VARCHAR" property="deal" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, type, deal_statues, deal_name, deal
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from deal_statue_table
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from deal_statue_table
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhaojm.data.bean.DealStatueTableDTO">
+    insert into deal_statue_table (id, type, deal_statues, 
+      deal_name, deal)
+    values (#{id,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{dealStatues,jdbcType=VARCHAR}, 
+      #{dealName,jdbcType=VARCHAR}, #{deal,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhaojm.data.bean.DealStatueTableDTO">
+    insert into deal_statue_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="dealStatues != null">
+        deal_statues,
+      </if>
+      <if test="dealName != null">
+        deal_name,
+      </if>
+      <if test="deal != null">
+        deal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dealStatues != null">
+        #{dealStatues,jdbcType=VARCHAR},
+      </if>
+      <if test="dealName != null">
+        #{dealName,jdbcType=VARCHAR},
+      </if>
+      <if test="deal != null">
+        #{deal,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhaojm.data.bean.DealStatueTableDTO">
+    update deal_statue_table
+    <set>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dealStatues != null">
+        deal_statues = #{dealStatues,jdbcType=VARCHAR},
+      </if>
+      <if test="dealName != null">
+        deal_name = #{dealName,jdbcType=VARCHAR},
+      </if>
+      <if test="deal != null">
+        deal = #{deal,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhaojm.data.bean.DealStatueTableDTO">
+    update deal_statue_table
+    set type = #{type,jdbcType=INTEGER},
+      deal_statues = #{dealStatues,jdbcType=VARCHAR},
+      deal_name = #{dealName,jdbcType=VARCHAR},
+      deal = #{deal,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <!-- selectAll -->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from deal_statue_table
+  </select>
+  
+  <!-- selectOpreat -->
+  <select id="selectOpreat" resultMap="BaseResultMap">
+    select type, deal_statues
+    from deal_statue_table GROUP BY type,deal_statues
+  </select>
+  
+</mapper>

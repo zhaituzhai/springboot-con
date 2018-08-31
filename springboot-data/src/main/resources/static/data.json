@@ -1,0 +1,790 @@
+{
+	"positive_bill": {
+		"1_4_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_2_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_4_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_3_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_4_4": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_2_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_3_2": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_4_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_1_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_2_4": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_3_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_4_2": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_0_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_1_2": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_2_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_0_4": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_1_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_2_2": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"1_3_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_1_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": false
+			},
+			{
+				"MERGE": false
+			},
+			{
+				"SPLIT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"ABOLITION": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"1_0_0": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT": true
+			},
+			{
+				"MERGE": true
+			},
+			{
+				"SPLIT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"ABOLITION": true
+			},
+			{
+				"DELETE": true
+			}
+		]
+	},
+	"negative_bill": {
+		"2_3_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_4_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_1_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_3_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_2_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_4_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_1_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_3_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_2_5": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_4_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_0_0": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_1_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": false
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": false
+			},
+			{
+				"DELETE": false
+			}
+		],
+		"2_0_3": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": false
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		],
+		"2_2_1": [
+			{
+				"DETAIL": true
+			},
+			{
+				"EDIT_POINT": true
+			},
+			{
+				"REDUCTION": true
+			},
+			{
+				"SUBMIT": true
+			},
+			{
+				"DELETE": true
+			}
+		]
+	}
+}

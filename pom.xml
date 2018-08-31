@@ -20,5 +20,6 @@
 		<module>spring-aop</module>
 		<module>spring-bean</module>
 		<module>spring-el</module>
+		<module>springboot-data</module>
 	</modules>
 </project>
