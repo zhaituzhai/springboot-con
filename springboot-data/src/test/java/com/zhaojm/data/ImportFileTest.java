@@ -41,7 +41,7 @@ public class ImportFileTest {
         String str=dealStatueService.dataToMap();
         FileWriter writer;
         try {
-            writer = new FileWriter("E:/testdata.txt");
+            writer = new FileWriter("E:/testdata1.txt");
             writer.write(str);
             writer.flush();
             writer.close();
