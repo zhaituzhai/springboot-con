@@ -35,6 +35,12 @@ public class MathCalculatTest {
         Integer mult = mathCalculat.mathMultiplication(2, 3);
         assertEquals(new Integer(6), mult);
     }
+    
+    @Test
+    public void testMath(){
+        Integer i = mathCalculat.math(3, 3, "+");
+        assertEquals(new Integer(6), i);
+    }
 
     @Test
     @Ignore
