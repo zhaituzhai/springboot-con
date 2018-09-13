@@ -21,5 +21,6 @@
 		<module>spring-el</module>
 		<module>springboot-data</module>
     <module>spring-jacoco</module>
+    <module>spring-cobertura</module>
   </modules>
 </project>
