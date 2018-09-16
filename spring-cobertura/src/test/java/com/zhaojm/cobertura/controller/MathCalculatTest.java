@@ -1,8 +1,8 @@
 package com.zhaojm.cobertura.controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,12 +40,14 @@ public class MathCalculatTest {
     public void testMath(){
         Integer i = mathCalculat.math(3, 3, "+");
         assertEquals(new Integer(6), i);
+        i = mathCalculat.math(3, 3, "-");
+        assertEquals(new Integer(0), i);
     }
 
     @Test
-    @Ignore
     public void testMathDivision() {
-        fail("Not yet implemented");
+        double ddd = mathCalculat.mathDivision(6, 2);
+        assertTrue(ddd != 0.0);
     }
 
 }
