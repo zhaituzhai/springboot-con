@@ -37,5 +37,13 @@ public class MathCalculat {
             return -1;
         }
     }
+    
+    public String throwExe(String test) throws Exception {
+        if(test == null ){
+            throw new Exception("数据为空！");
+        }else{
+            return test;
+        }
+    }
 
 }

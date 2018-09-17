@@ -41,24 +41,33 @@
 				<version>2.7</version>
 				<configuration>
 					<formats>
+						<!-- 报告显示格式（html为浏览器版，xml为数据版嵌入jenkins的数据） -->
 						<format>html</format>
 						<format>xml</format>
 					</formats>
 					<check>
-						<!--每个类的分支覆盖率
-						<branchRate>85</branchRate>
+						<!--
+						每个类的分支覆盖率 
+						<branchRate>85</branchRate> 
 						每个类的代码行覆盖率
-						<lineRate>85</lineRate> -->
+						<lineRate>85</lineRate>
+						 -->
 						<!--校验失败则中止.即为true时如果校验失败则打包执行失败,反之则只是打出告警日志 -->
 						<haltOnFailure>true</haltOnFailure>
 						<!--整体的分支覆盖率 -->
-						<!-- <totalBranchRate>85</totalBranchRate>
-						整体的代码行覆盖率
-						<totalLineRate>85</totalLineRate>
-						每个包的分支行覆盖率
-						<packageBranchRate>85</packageBranchRate>
-						每个包的代码行覆盖率
-						<packageLineRate>85</packageLineRate> -->
+						<!-- 
+						<totalBranchRate>85</totalBranchRate> 
+						整体的代码行覆盖率 
+						<totalLineRate>85</totalLineRate> 
+						每个包的分支行覆盖率 
+						<packageBranchRate>85</packageBranchRate> 
+						每个包的代码行覆盖率 
+						<packageLineRate>85</packageLineRate>
+						 -->
+						<!-- 
+						使用正则表达统计符合某个规则的的覆盖率的程度
+						（运行mvn cobertura:check时如果没有达到转haltOnFailure配置的内容） 
+						-->
 						<regexes>
 							<regex>
 								<pattern>com.zhaojm.cobertura.controller.*</pattern>
@@ -67,26 +76,34 @@
 							</regex>
 						</regexes>
 					</check>
+					<!-- 过滤不处理的类 -->
 					<instrumentation>
 						<!--<ignore>.*</ignore> -->
 						<excludes>
+							<!-- 过滤类名为某个规则的类 -->
 							<exclude>**/*App.class</exclude>
-							<exclude>**/*Service.class</exclude>
+							<!-- 过滤包下的所有类 -->
 							<exclude>**/bean/*.class</exclude>
+							<!-- <exclude>**/*Service.class</exclude> -->
 							<!-- <exclude>**/*Test.class</exclude> -->
 						</excludes>
 					</instrumentation>
 				</configuration>
+				<!-- 执行周期 -->
 				<executions>
 					<execution>
 						<goals>
 							<goal>clean</goal>
+							<goal>cobertura</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+	<!-- <reporting>中的配置作用于Maven的site阶段，用于生成报表。<reporting>中也可以配置插件<plugins>，
+	并通过一个<plugin>的<reportSet>为该插件配置参数。注意，对于同时出现在<build>和<reporting>中的插件，
+	<reporting>中对该插件的配置也能够在构建过程中生效，即该插件的配置是<build>和<reporting>中的配置的合并 -->
 	<reporting>
 		<plugins>
 			<plugin>
