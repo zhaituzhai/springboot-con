@@ -24,4 +24,39 @@
 		<module>spring-jacoco</module>
 		<module>spring-cobertura</module>
 	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<formats>
+							<format>html</format>
+							<format>xml</format>
+						</formats>
+						<check>
+							<haltOnFailure>true</haltOnFailure>
+						</check>
+						<instrumentation>
+							<excludes>
+								<exclude>**/*App.class</exclude>
+								<exclude>**/*DTO.class</exclude>
+								<exclude>**/*Controller.class</exclude>
+							</excludes>
+						</instrumentation>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>test</phase>
+							<goals>
+								<goal>cobertura</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

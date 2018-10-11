@@ -39,8 +39,9 @@ public class MathCalculatTest {
     
     @Test
     public void testMath(){
+        int w = 8/0;
         Integer i = mathCalculat.math(3, 3, "+");
-        assertEquals(new Integer(3), i);
+        assertEquals(new Integer(6), i);
         i = mathCalculat.math(3, 3, "-");
         assertEquals(new Integer(0), i);
     }

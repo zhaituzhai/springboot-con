@@ -2,23 +2,27 @@ package com.zhaojm.data;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zhaojm.data.service.IDealStatueService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@Transactional
 public class ImportFileTest {
 
     @Autowired
@@ -41,7 +45,7 @@ public class ImportFileTest {
         String str=dealStatueService.dataToMap();
         FileWriter writer;
         try {
-            writer = new FileWriter("E:/testdata1.txt");
+            writer = new FileWriter("E:/testdata122.txt");
             writer.write(str);
             writer.flush();
             writer.close();
@@ -49,5 +53,13 @@ public class ImportFileTest {
             e.printStackTrace();
         }
     }
+    
+    /*@AfterClass
+    public static void cleanData(){
+        File file = new File("E:/testdata122.txt");
+        if(file.exists() && file.isFile()){
+            file.delete();
+        }
+    }*/
     
 }
