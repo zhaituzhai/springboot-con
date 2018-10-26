@@ -53,16 +53,21 @@
 						</regexes>
 					</check>
 					<!-- 过滤不处理的类 -->
-					<instrumentation>
-						<!--<ignore>.*</ignore> -->
+<!-- 					<instrumentation>
+						<ignore>.*</ignore>
 						<excludes>
-							<!-- 过滤类名为某个规则的类 -->
+							过滤类名为某个规则的类
 							<exclude>**/*App.class</exclude>
-							<!-- 过滤包下的所有类 -->
+							过滤包下的所有类
 							<exclude>**/bean/*.class</exclude>
-							<!-- <exclude>**/*Service.class</exclude> -->
-							<!-- <exclude>**/*Test.class</exclude> -->
+							<exclude>**/*Service.class</exclude>
+							<exclude>**/*Test.class</exclude>
 						</excludes>
+					</instrumentation> -->
+					<instrumentation>
+						<includes>
+							<include>com/zhaojm/cobertura/controller/*.class</include>
+						</includes>
 					</instrumentation>
 				</configuration>
 			</plugin>
