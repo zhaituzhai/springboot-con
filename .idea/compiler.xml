@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka" />
+        <module name="spring-aop" />
+        <module name="spring-bean" />
+        <module name="spring-cobertura" />
+        <module name="spring-el" />
+        <module name="spring-jacoco" />
+        <module name="springboot-data" />
+        <module name="springboot-hello" />
+        <module name="springredis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka" target="1.8" />
+      <module name="spring-aop" target="1.8" />
+      <module name="spring-bean" target="1.8" />
+      <module name="spring-cobertura" target="1.8" />
+      <module name="spring-el" target="1.8" />
+      <module name="spring-jacoco" target="1.8" />
+      <module name="springboot-con" target="1.8" />
+      <module name="springboot-data" target="1.8" />
+      <module name="springboot-hello" target="1.8" />
+      <module name="springredis" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

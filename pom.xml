@@ -24,7 +24,22 @@
 		<module>spring-jacoco</module>
 		<module>spring-cobertura</module>
         <module>spring-redis</module>
-	</modules>
+        <module>eureka</module>
+    </modules>
+	<!-- 使用dependencyManagement进行版本管理 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR6</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
 	<build>
 		<pluginManagement>
 			<plugins>
