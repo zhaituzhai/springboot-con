@@ -29,7 +29,7 @@ public class UserAccountTest {
         Long beginTime = new Date().getTime();
         userAccountService.getUserByName("matte");
         Long totalConsumedTime=new Date().getTime()-beginTime;
-        System.out.println("數據庫查詢的時間："+totalConsumedTime);
+        System.out.println("數據查詢的時間："+totalConsumedTime);
     }
 
     @Test
@@ -38,8 +38,8 @@ public class UserAccountTest {
         Long beginTime = new Date().getTime();
         userAccountService.getUserByName("matte");
         Long totalConsumedTime=new Date().getTime()-beginTime;
-        System.out.println("數據庫查詢的時間："+totalConsumedTime);
-        userAccountService.delLoginUser("matte");
+        System.out.println("數據查詢的時間："+totalConsumedTime);
+//        userAccountService.delLoginUser("matte");
     }
 
     private void loginUser() {
