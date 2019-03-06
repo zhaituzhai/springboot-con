@@ -1,3 +1,5 @@
+
+
 mybatis:
   mapper-locations: classpath*:/mybatis/*Mapper.xml
   #configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -18,7 +20,7 @@ spring:
   application:
     name: spring-redis
 
-spring.redis.database.: 0
+spring.redis.database: 0
 spring.redis.host: 127.0.0.1
 spring.redis.port: 6379
 spring.redis.password:
@@ -30,4 +32,15 @@ logging:
     com.zhaojm.redis: debug
   file:
     max-size: 64M
+server:
+  port: 1120
+
+#注册中心配置参数
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   #config: classpath:log4j2.xml

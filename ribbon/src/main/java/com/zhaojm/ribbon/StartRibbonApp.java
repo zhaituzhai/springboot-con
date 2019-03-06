@@ -1,4 +1,4 @@
-package com.zhao.ribbon;
+package com.zhaojm.ribbon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

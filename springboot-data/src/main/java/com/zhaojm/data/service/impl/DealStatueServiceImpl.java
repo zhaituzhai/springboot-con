@@ -1,14 +1,9 @@
 package com.zhaojm.data.service.impl;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PushbackInputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.alibaba.fastjson.JSON;
+import com.zhaojm.data.bean.DealStatueTableDTO;
+import com.zhaojm.data.mapper.IDealStatueTableMapper;
+import com.zhaojm.data.service.IDealStatueService;
 import org.apache.poi.POIXMLDocument;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
@@ -19,10 +14,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.fastjson.JSON;
-import com.zhaojm.data.bean.DealStatueTableDTO;
-import com.zhaojm.data.mapper.IDealStatueTableMapper;
-import com.zhaojm.data.service.IDealStatueService;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PushbackInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class DealStatueServiceImpl implements IDealStatueService {
@@ -32,9 +31,9 @@ public class DealStatueServiceImpl implements IDealStatueService {
     
     @Override
     public String dataToMap() {
-        Map<String, Map> totalMap = new HashMap<>();
-        Map<String, List<Map<String, Boolean>>> PERMISSION_MAP_1 = new HashMap<String, List<Map<String, Boolean>>>();
-        Map<String, List<Map<String, Boolean>>> PERMISSION_MAP_2 = new HashMap<String, List<Map<String, Boolean>>>();
+        Map<String, Map> totalMap = new HashMap();
+        Map<String, List<Map<String, Boolean>>> PERMISSION_MAP_1 = new HashMap();
+        Map<String, List<Map<String, Boolean>>> PERMISSION_MAP_2 = new HashMap();
         Map<String, Boolean> OPERATION_MAP_1 = null;
 //        Map<String, Boolean> OPERATION_MAP_2 = new HashMap<String, Boolean>();
         
@@ -42,10 +41,10 @@ public class DealStatueServiceImpl implements IDealStatueService {
         //PERMISSION_MAP = new HashMap<String, Map<String, Boolean>>();
         for (DealStatueTableDTO test1 : dealStauteMap1) {
             if(test1.getType() == 0){
-                PERMISSION_MAP_1.put(test1.getDealStatues(), new ArrayList<>());
+                PERMISSION_MAP_1.put(test1.getDealStatues(), new ArrayList());
             }
             if(test1.getType() == 1){
-                PERMISSION_MAP_2.put(test1.getDealStatues(), new ArrayList<>());
+                PERMISSION_MAP_2.put(test1.getDealStatues(), new ArrayList());
             }
             
         }

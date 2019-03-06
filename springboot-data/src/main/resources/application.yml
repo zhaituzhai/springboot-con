@@ -19,12 +19,21 @@ spring:
     max-idle: 8
     min-idle: 8
     initial-size: 10
-    
-    
+  application:
+    name: spring-date
+
     
 app.session.outtime: 3600
-    
-    
-    
+server:
+  port: 1130
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
     
     

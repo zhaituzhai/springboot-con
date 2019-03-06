@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ribbon
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+server:
+  port: 1121
