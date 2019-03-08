@@ -3,25 +3,26 @@ package com.zhaojm.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Api(tags = "hello",value = "first")
 @RestController
+@RequestMapping
 public class HelloController {
     
-    @GetMapping
+    @PostMapping
     @ApiOperation("hello")
-    public Map<String, String> hello(@ApiParam("map") Map<String, String> map){
+    public Map<String, String> hello(@ApiParam("map") @RequestBody Map<String, String> map){
         
-        map = new HashMap<String, String>();
-        map.put("name", "zhaojiamin");
-        map.put("age", "34");
+        Map<String, String> mapResult = new HashMap<String, String>();
+        mapResult.putAll(map);
+        mapResult.put("name", "zhaojiamin");
+        mapResult.put("age", "34");
         
-        return map;
+        return mapResult;
     }
 
     @GetMapping

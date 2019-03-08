@@ -27,11 +27,11 @@ spring.redis.password:
 
 #LogBack日志配置
 logging:
-  path: /spring/test/logs/
-  level:
-    com.zhaojm.redis: debug
-  file:
-    max-size: 64M
+    path: /logtext/con/logs/
+    level:
+        com.zhaojm: debug
+    file:
+        max-size: 64M
 server:
   port: 1120
 

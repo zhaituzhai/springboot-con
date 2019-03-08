@@ -26,6 +26,7 @@
         <module>spring-redis</module>
         <module>eureka</module>
         <module>ribbon</module>
+        <module>common</module>
     </modules>
 	<!-- 使用dependencyManagement进行版本管理 -->
 	<dependencyManagement>

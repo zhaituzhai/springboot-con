@@ -13,12 +13,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 改写@requestMapping value值为类名+方法名
- * com.zhaojm.controller.HelloController#hello  ->
- * /hello/hello
- */
-public class HelloRequestMappingHandlerMapping extends RequestMappingHandlerMapping {
+public class ConRequestMappingHandlerMapping extends RequestMappingHandlerMapping {
 
     private boolean useSuffixPatternMatch = true;
 
@@ -46,10 +41,10 @@ public class HelloRequestMappingHandlerMapping extends RequestMappingHandlerMapp
             // 得到自定义方法级请求条件。
             RequestCondition<?> requestCondition = getCustomMethodCondition(method);
             info = createRequestMappingInfo(methodAnnotation, requestCondition, method);
-            RequestMapping typeAnnotation =AnnotatedElementUtils.findMergedAnnotation(handlerType, RequestMapping.class);
+            RequestMapping typeAnnotation = AnnotatedElementUtils.findMergedAnnotation(handlerType, RequestMapping.class);
             if (typeAnnotation != null) {
                 RequestCondition<?> typeCondition = getCustomTypeCondition(handlerType);
-                info = createRequestMappingInfo(typeAnnotation, typeCondition,handlerType).combine(info);
+                info = createRequestMappingInfo(typeAnnotation, typeCondition, handlerType).combine(info);
             }
         }
         return info;
@@ -75,13 +70,13 @@ public class HelloRequestMappingHandlerMapping extends RequestMappingHandlerMapp
             }
         }
         return new RequestMappingInfo(
-            new PatternsRequestCondition(patterns, getUrlPathHelper(), getPathMatcher(), this.useSuffixPatternMatch, this.useTrailingSlashMatch, this.fileExtensions),
-            new RequestMethodsRequestCondition(annotation.method()),
-            new ParamsRequestCondition(annotation.params()),
-            new HeadersRequestCondition(annotation.headers()),
-            new ConsumesRequestCondition(annotation.consumes(), annotation.headers()),
-            new ProducesRequestCondition(annotation.produces(), annotation.headers(), this.contentNegotiationManager),
-            customCondition
+                new PatternsRequestCondition(patterns, getUrlPathHelper(), getPathMatcher(), this.useSuffixPatternMatch, this.useTrailingSlashMatch, this.fileExtensions),
+                new RequestMethodsRequestCondition(annotation.method()),
+                new ParamsRequestCondition(annotation.params()),
+                new HeadersRequestCondition(annotation.headers()),
+                new ConsumesRequestCondition(annotation.consumes(), annotation.headers()),
+                new ProducesRequestCondition(annotation.produces(), annotation.headers(), this.contentNegotiationManager),
+                customCondition
         );
     }
 
@@ -89,7 +84,7 @@ public class HelloRequestMappingHandlerMapping extends RequestMappingHandlerMapp
         //1.去除包路径
         //2.去除controller包
         //String typeValue = path.replaceAll("^com\\.xxxxxx\\.xxxx\\.[a-zA-z]+\\.|[c|C]ontroller[\\.]*", "");
-        String typeValue = path.replaceAll("^com\\.zhaojm\\.|[c|C]ontroller[\\.]*", "");
+        String typeValue = path.replaceAll("^com\\.zhaojm\\.[a-zA-z]+\\.|[c|C]ontroller[\\.]*", "");
         //3.类名称首字母转小写
         String[] typeValues = typeValue.split("\\.");
         String lastStr = typeValues[typeValues.length-1];
