@@ -1,4 +1,4 @@
-package com.zhaojm;
+package com.zhaojm.common;
 
 import org.apache.commons.lang3.StringUtils;
 

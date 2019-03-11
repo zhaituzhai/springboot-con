@@ -1,6 +1,7 @@
 package com.zhaojm.data.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.zhaojm.common.util.ConUtil;
 import com.zhaojm.data.bean.DealStatueTableDTO;
 import com.zhaojm.data.mapper.IDealStatueTableMapper;
 import com.zhaojm.data.service.IDealStatueService;
@@ -18,10 +19,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PushbackInputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class DealStatueServiceImpl implements IDealStatueService {
@@ -194,5 +192,10 @@ public class DealStatueServiceImpl implements IDealStatueService {
             return null;
         }
 
+    }
+
+    public static void main(String[] args) {
+        String[] strs = {"adb","abc","der","long","load"};
+        System.out.println(Arrays.toString(ConUtil.getStringSort(strs)));
     }
 }

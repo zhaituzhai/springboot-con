@@ -1,10 +1,6 @@
-package com.zhaojm.config.web;
+package com.zhaojm.data.config.web;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-
+/*
 @Configuration
 public class WebConfig extends WebMvcConfigurationSupport {
 
@@ -13,10 +9,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
         return new ConRequestMappingHandlerMapping();
     }
 
-    /**
+    *//**
      * https://www.cnblogs.com/deng720/p/8989388.html
      * spring boot 继承WebMvcConfigurationSupport后自动配置不生效问题
-     */
+     *//*
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         //将所有/static/** 访问都映射到classpath:/static/ 目录下
@@ -26,4 +22,4 @@ public class WebConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
         super.addResourceHandlers(registry);
     }
-}
+}*/

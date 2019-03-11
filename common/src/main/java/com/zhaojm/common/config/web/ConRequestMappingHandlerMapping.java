@@ -1,4 +1,4 @@
-package com.zhaojm.config.web;
+package com.zhaojm.common.config.web;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotatedElementUtils;

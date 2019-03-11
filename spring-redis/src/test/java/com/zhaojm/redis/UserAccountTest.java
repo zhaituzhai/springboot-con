@@ -21,7 +21,7 @@ public class UserAccountTest {
     @Test
     public void getAllUserTest(){
         List<UserAccountDTO> userList = userAccountService.getAllUserAccount();
-        userList.forEach(System.out::println);
+//        userList.forEach(System.out::println);
     }
 
     @Test
