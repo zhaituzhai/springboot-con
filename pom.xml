@@ -27,7 +27,8 @@
         <module>eureka</module>
         <module>ribbon</module>
         <module>common</module>
-    </modules>
+		<module>spring-secutity</module>
+	</modules>
 	<!-- 使用dependencyManagement进行版本管理 -->
 	<dependencyManagement>
 		<dependencies>
