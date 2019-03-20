@@ -1,21 +1,29 @@
 package com.zhaojm.security.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
+@Api("hello")
 public class HelloController {
 
     @GetMapping
-    public String hello(){
-        return "Hello";
+    @ApiOperation("index")
+    public String index(){
+        return "index";
     }
 
-    @PostMapping
-    public String login(String username, String password){
+    @GetMapping
+    @ApiOperation("hello")
+    public String hello(){
+        return "hello";
+    }
+
+    @GetMapping
+    @ApiOperation("login")
+    public String login(@RequestParam String username, @RequestParam String password){
         return username + "login";
     }
 }

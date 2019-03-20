@@ -12,6 +12,9 @@
   <sql id="Base_Column_List">
     id, name, description, available, create_time, update_time
   </sql>
+  <sql id="Base_Column_List_table">
+    t1.id , t1.name, t1.description, t1.available, t1.create_time, t1.update_time
+  </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -106,7 +109,7 @@
   <!-- 自定义SQL -->
   <select id="selectUserRoleList" resultMap="BaseResultMap">
     SELECT
-    <include refid="Base_Column_List"/>
+    <include refid="Base_Column_List_table"/>
     FROM sys_role t1, sys_user_role t2
     WHERE t2.role_id = t1.id and t2.user_id = #{userId}
   </select>
