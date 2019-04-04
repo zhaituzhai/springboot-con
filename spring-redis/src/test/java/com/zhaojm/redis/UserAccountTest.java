@@ -1,5 +1,6 @@
 package com.zhaojm.redis;
 
+import com.github.pagehelper.PageInfo;
 import com.zhaojm.redis.dao.UserAccountDTO;
 import com.zhaojm.redis.service.IUserAccountService;
 import org.junit.Test;
@@ -47,6 +48,12 @@ public class UserAccountTest {
         userAccountDTO.setUserName("matte");
         userAccountDTO.setPassword("1234");
         userAccountService.loginUser(userAccountDTO);
+    }
+
+    @Test
+    public void testPageUser(){
+        PageInfo pageInfo = userAccountService.getpageUser();
+        System.out.println(pageInfo.getList());
     }
 
 }
