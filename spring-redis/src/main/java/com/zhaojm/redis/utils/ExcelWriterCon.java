@@ -6,6 +6,7 @@ import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.parameter.GenerateParam;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.zhaojm.redis.annotation.ExcelField;
+import com.zhaojm.redis.annotation.ExcelSheet;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,7 @@ public class ExcelWriterCon extends ExcelWriter {
     public ExcelWriterCon(OutputStream out, Map<String, Map<String, String>> dictMap, Class<?> clazz) {
         super(out, ExcelTypeEnum.XLSX);
         out = new ByteArrayOutputStream();
-        this.sheet = new Sheet(1, 0);
+        this.sheet = setSheet(clazz);
         this.fieldlist = getFieldList(clazz);
         this.dictMap = dictMap;
         this.table = this.setHead();
@@ -69,7 +70,7 @@ public class ExcelWriterCon extends ExcelWriter {
         sheetDataList.forEach(x -> {
             listData.add(dataChange(x));
         });
-        this.write0(listData, sheet,table);
+        this.write0(listData, sheet, table);
     }
     /***
      *
@@ -111,6 +112,26 @@ public class ExcelWriterCon extends ExcelWriter {
         });
         table.setHead(titles);
         return table;
+    }
+
+    /**
+     * 设置表
+     * @param clazz
+     * @return
+     */
+    private static Sheet setSheet(Class<?> clazz){
+        Sheet sheet = new Sheet(1,0);
+        boolean clzHasAnno = clazz.isAnnotationPresent(ExcelSheet.class);
+        if(clzHasAnno){
+            ExcelSheet sheetAnno = clazz.getAnnotation(ExcelSheet.class);
+            String sheetName = sheetAnno.name().trim();
+            if(StringUtils.isNotEmpty(sheetName)){
+                sheet.setSheetName(sheetName);
+            }else{
+                sheet.setSheetName("sheet1");
+            }
+        }
+        return sheet;
     }
 
     /***

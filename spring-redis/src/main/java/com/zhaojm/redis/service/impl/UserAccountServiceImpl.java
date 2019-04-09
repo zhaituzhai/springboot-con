@@ -11,6 +11,7 @@ import com.zhaojm.redis.dao.UserAccountDTO;
 import com.zhaojm.redis.mapper.IUserAccountMapper;
 import com.zhaojm.redis.service.IUserAccountService;
 import com.zhaojm.redis.utils.ExcelExportHelp;
+import com.zhaojm.redis.utils.ExcelWriterCon;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -139,6 +140,22 @@ public class UserAccountServiceImpl implements IUserAccountService {
             List<UserAccountDTO> appendUserList = userAccountMapper.getAllUser();
             writer.write(appendUserList, sheet);
             if(appendUserList.size() < pagesize){
+                break;
+            }
+        }
+        writer.finish();
+    }
+
+    @Override
+    public void getPageUserByCon(ServletOutputStream os){
+
+        ExcelWriterCon writer = new ExcelWriterCon(os, null, UserAccountDTO.class);
+        int nowPageNum = 1;
+        while(true){
+            PageHelper.startPage(nowPageNum++, exportPageSize, false);
+            List<UserAccountDTO> appendUserList = userAccountMapper.getAllUser();
+            writer.appendData(appendUserList);
+            if(appendUserList.size() < exportPageSize){
                 break;
             }
         }

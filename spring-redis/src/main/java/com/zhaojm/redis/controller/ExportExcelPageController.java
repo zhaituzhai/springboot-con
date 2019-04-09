@@ -94,4 +94,22 @@ public class ExportExcelPageController {
                 System.currentTimeMillis()-startTime, pagesize);
     }
 
+    @GetMapping
+    @ApiOperation("修改之后的EeayExcel 下载Excel")
+    public void exportUserInfoExcelCon(HttpServletResponse response){
+        long startTime = System.currentTimeMillis();
+        try {
+            response.setCharacterEncoding("UTF-8");
+            response.setHeader("Content-Disposition",
+                    "attachment;filename=" + URLEncoder.encode("easyExcel.xlsx", "UTF-8"));
+            response.setHeader("content-Type", "application/vnd.ms-excel");
+            ServletOutputStream os = response.getOutputStream();
+            userAccountService.getPageUserByCon(os);
+        } catch (Exception e) {
+            logger.debug("export error",e);
+        }
+        logger.info("EasyExcel下載Excel时间执行了『{}』步长『{}』",
+                System.currentTimeMillis()-startTime);
+    }
+
 }

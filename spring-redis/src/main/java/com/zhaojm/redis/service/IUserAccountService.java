@@ -23,4 +23,6 @@ public interface IUserAccountService {
     Workbook getPageUserByETC();
 
     void getPageUserByEasyExcel(int pagesize, ServletOutputStream os);
+
+    void getPageUserByCon(ServletOutputStream os);
 }
