@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,8 +51,42 @@ public class UserAccountTest {
 
     @Test
     public void testPageUser(){
-        PageInfo pageInfo = userAccountService.getpageUser();
+        PageInfo pageInfo = userAccountService.getPageUserList();
         System.out.println(pageInfo.getList());
+    }
+
+    public static void main(String[] args) {
+        Map<String, String> orderMap = new HashMap<>();
+        orderMap.put("1","1");
+        orderMap.put("2","2");
+        orderMap.put("3","3");
+        orderMap.put("4","4");
+        orderMap.put("5","5");
+        orderMap.put("6","6");
+        orderMap.put("7","7");
+        orderMap.put("8","8");
+        orderMap.put("9","9");
+        orderMap.put("10","10");
+        orderMap.put("11","11");
+        orderMap.put("12","12");
+        orderMap.put("13","13");
+        orderMap.put("14","14");
+        orderMap.put("15","15");
+        orderMap.put("16","16");
+        orderMap.put("17","17");
+        orderMap.put("18","18");
+        orderMap.put("19","19");
+        orderMap.put("20","20");
+        orderMap.put("21","21");
+        orderMap.put("22","22");
+        orderMap.put("23","23");
+        orderMap.put("24","24");
+        orderMap.put("25","24");
+        orderMap.put("26","26");
+        Set<Map.Entry<String, String>> entry = orderMap.entrySet();
+        entry.forEach(k -> {
+            System.out.println(k.getKey()+" "+k.getValue());
+        });
     }
 
 }

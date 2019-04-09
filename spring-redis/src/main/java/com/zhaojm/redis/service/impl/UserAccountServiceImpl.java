@@ -12,6 +12,7 @@ import com.zhaojm.redis.mapper.IUserAccountMapper;
 import com.zhaojm.redis.service.IUserAccountService;
 import com.zhaojm.redis.utils.ExcelExportHelp;
 import com.zhaojm.redis.utils.ExcelWriterCon;
+import com.zhaojm.redis.vo.UserQueryVO;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,8 +49,10 @@ public class UserAccountServiceImpl implements IUserAccountService {
         return userAccountMapper.getAllUser();
     }
 
+
+
     @Override
-    public PageInfo<UserAccountDTO> getpageUser(){
+    public PageInfo<UserAccountDTO> getPageUserList(){
         int pageSize = 1000;
         PageHelper.startPage(1, pageSize);
         List<UserAccountDTO> userlist = userAccountMapper.getAllUser();
@@ -160,6 +163,15 @@ public class UserAccountServiceImpl implements IUserAccountService {
             }
         }
         writer.finish();
+    }
+
+    @Override
+    public PageInfo<UserAccountDTO> getPageUser(UserQueryVO userVO) {
+        int pageSize = 10;
+        PageHelper.startPage(1, pageSize);
+        List<UserAccountDTO> userlist = userAccountMapper.getPageUser(userVO);
+        PageInfo<UserAccountDTO> pageInfo = new PageInfo(userlist);
+        return pageInfo;
     }
 
 }

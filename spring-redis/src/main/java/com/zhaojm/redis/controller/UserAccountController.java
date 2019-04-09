@@ -3,10 +3,13 @@ package com.zhaojm.redis.controller;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.zhaojm.redis.dao.UserAccountDTO;
 import com.zhaojm.redis.service.IUserAccountService;
+import com.zhaojm.redis.vo.UserQueryVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,8 +39,11 @@ public class UserAccountController {
     public List<UserAccountDTO> getAllUser(){
         return userAccountService.getAllUserAccount();
     }
-
-
+    @PostMapping
+    @ApiOperation("得到所有用户")
+    public PageInfo<UserAccountDTO> getPageUser(@RequestBody @ApiParam("查询对象") UserQueryVO userVO){
+        return userAccountService.getPageUser(userVO);
+    }
 
 
 
@@ -86,21 +92,10 @@ public class UserAccountController {
 
     @PostMapping
     @ApiOperation("数组信息传递")
-    public List<String> returnString(@RequestBody ListVO userIdList){
-        return userIdList.getUserList();
+    public String returnString(@RequestBody String userIdList){
+        return userIdList;
     }
 
 
 
-}
-class ListVO{
-    List<String> userList;
-
-    public List<String> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<String> userList) {
-        this.userList = userList;
-    }
 }

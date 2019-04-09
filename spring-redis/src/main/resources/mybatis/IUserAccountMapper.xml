@@ -125,4 +125,29 @@
      from user_account
      where user_name = #{username}
   </select>
+  <select id="getPageUser" resultMap="BaseResultMap" parameterType="com.zhaojm.redis.vo.UserQueryVO">
+    select
+    <include refid="Base_Column_List"/>
+    FROM user_account
+    <where>
+      <if test="userName != null">
+        user_name LIKE CONCAT('%',#{userName},'%')
+      </if>
+      <if test="userPhone != null">
+        and user_phone LIKE CONCAT('%',#{userPhone},'%')
+      </if>
+      <if test="userType != null">
+        and user_type = #{userType}
+      </if>
+    </where>
+    <if test="orderField != null and orderType !=null">
+      order by ${orderField} ${orderType}
+    </if>
+    <if test="orderMap.size() > 0">
+      order by
+      <foreach item="value" index="key" collection="orderMap.entrySet()" separator=",">
+        ${key} ${value}
+      </foreach>
+    </if>
+  </select>
 </mapper>

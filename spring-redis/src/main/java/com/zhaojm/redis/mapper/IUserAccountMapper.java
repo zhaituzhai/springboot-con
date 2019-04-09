@@ -1,6 +1,7 @@
 package com.zhaojm.redis.mapper;
 
 import com.zhaojm.redis.dao.UserAccountDTO;
+import com.zhaojm.redis.vo.UserQueryVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,4 +24,6 @@ public interface IUserAccountMapper {
     List<UserAccountDTO> getAllUser();
 
     List<UserAccountDTO> getUserByName(@Param("username") String username);
+
+    List<UserAccountDTO> getPageUser(UserQueryVO userVO);
 }
