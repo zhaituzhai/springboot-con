@@ -16,7 +16,6 @@ public class MainRun {
         System.out.println("Prototy Demo is "+prototyDemo1.equals(prototyDemo2));
         
         context.close();
-
     }
 
 }

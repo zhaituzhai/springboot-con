@@ -3,6 +3,8 @@ package com.zhaojm.redis.vo;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class BaseVO {
     @ApiModelProperty(value = "排序字段", example = "user_name")
@@ -28,8 +30,15 @@ public class BaseVO {
         this.orderType = orderType;
     }
 
-    public LinkedHashMap<String, String> getOrderMap() {
-        return orderMap;
+    public String getOrderMap() {
+        StringBuilder sb = new StringBuilder();
+        if(null != orderMap) {
+            Set<Map.Entry<String, String>> entry = orderMap.entrySet();
+            entry.forEach(k -> sb.append(k.getKey() + " " + k.getValue() + ","));
+            return sb.substring(0,sb.length()-1);
+        }else {
+            return sb.toString();
+        }
     }
 
     public void setOrderMap(LinkedHashMap<String, String> orderMap) {

@@ -3,6 +3,7 @@ package com.zhaojm.redis;
 import com.github.pagehelper.PageInfo;
 import com.zhaojm.redis.dao.UserAccountDTO;
 import com.zhaojm.redis.service.IUserAccountService;
+import com.zhaojm.redis.vo.UserQueryVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,17 @@ public class UserAccountTest {
     @Test
     public void testPageUser(){
         PageInfo pageInfo = userAccountService.getPageUserList();
+        System.out.println(pageInfo.getList());
+    }
+
+    @Test
+    public void testPageOrder(){
+        UserQueryVO userVO = new UserQueryVO();
+        LinkedHashMap<String, String> orderMap = new LinkedHashMap<>();
+        orderMap.put("user_name","asc");
+        orderMap.put("creat_time","desc");
+//        userVO.setOrderMap(orderMap);
+        PageInfo pageInfo = userAccountService.getPageUser(userVO);
         System.out.println(pageInfo.getList());
     }
 

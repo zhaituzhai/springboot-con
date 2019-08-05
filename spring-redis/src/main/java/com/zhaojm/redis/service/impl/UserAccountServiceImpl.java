@@ -168,7 +168,7 @@ public class UserAccountServiceImpl implements IUserAccountService {
     @Override
     public PageInfo<UserAccountDTO> getPageUser(UserQueryVO userVO) {
         int pageSize = 10;
-        PageHelper.startPage(1, pageSize);
+        PageHelper.startPage(1, pageSize, userVO.getOrderMap());
         List<UserAccountDTO> userlist = userAccountMapper.getPageUser(userVO);
         PageInfo<UserAccountDTO> pageInfo = new PageInfo(userlist);
         return pageInfo;

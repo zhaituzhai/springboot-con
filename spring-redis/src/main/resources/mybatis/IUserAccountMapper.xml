@@ -140,14 +140,7 @@
         and user_type = #{userType}
       </if>
     </where>
-    <if test="orderField != null and orderType !=null">
-      order by ${orderField} ${orderType}
-    </if>
-    <if test="orderMap.size() > 0">
-      order by
-      <foreach item="value" index="key" collection="orderMap.entrySet()" separator=",">
-        ${key} ${value}
-      </foreach>
-    </if>
+    order by creat_time desc
+    <!--<include refid="com.zhaojm.common.commonOrderSql"/>-->
   </select>
 </mapper>
