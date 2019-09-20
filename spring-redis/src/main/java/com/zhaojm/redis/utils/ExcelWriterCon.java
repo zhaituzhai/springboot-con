@@ -1,6 +1,7 @@
 package com.zhaojm.redis.utils;
 
 import com.alibaba.excel.ExcelWriter;
+import com.alibaba.excel.event.WriteHandler;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.parameter.GenerateParam;
@@ -11,7 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
@@ -38,6 +38,8 @@ public class ExcelWriterCon extends ExcelWriter {
 
     private Table table;
 
+    boolean needRemark;
+
     public ExcelWriterCon(OutputStream outputStream, ExcelTypeEnum typeEnum) {
         super(outputStream, typeEnum);
     }
@@ -50,15 +52,17 @@ public class ExcelWriterCon extends ExcelWriter {
         super(outputStream, typeEnum, needHead);
     }
 
-    public ExcelWriterCon(InputStream templateInputStream, OutputStream outputStream, ExcelTypeEnum typeEnum, boolean needHead) {
-        super(templateInputStream, outputStream, typeEnum, needHead);
+    public ExcelWriterCon(InputStream templateInputStream, OutputStream outputStream, ExcelTypeEnum typeEnum, boolean needHead, WriteHandler writeHandler) {
+        super(templateInputStream, outputStream, typeEnum, needHead, writeHandler);
     }
 
 
-    public ExcelWriterCon(OutputStream out, Map<String, Map<String, String>> dictMap, Class<?> clazz) {
-        super(out, ExcelTypeEnum.XLSX);
-        out = new ByteArrayOutputStream();
+
+    public ExcelWriterCon(OutputStream out, Map<String, Map<String, String>> dictMap, Class<?> clazz, WriteHandler writeHandler) {
+        super(null, out, ExcelTypeEnum.XLSX, false, writeHandler);
+//        out = new ByteArrayOutputStream();
         this.sheet = setSheet(clazz);
+        this.needRemark = getNeedRemark(clazz);
         this.fieldlist = getFieldList(clazz);
         this.dictMap = dictMap;
         this.table = this.setHead();
@@ -106,11 +110,17 @@ public class ExcelWriterCon extends ExcelWriter {
      */
     private Table setHead() {
         Table table = new Table(1);
-        List<List<String>> titles = new ArrayList<List<String>>();
+        List<String> titles = new ArrayList<>();
+        List<String> remarks = new ArrayList<>();
         fieldlist.forEach(x -> {
-            titles.add(Arrays.asList(x.getAnnotation(ExcelField.class).name()));
+            titles.add(x.getAnnotation(ExcelField.class).name());
+            remarks.add(x.getAnnotation(ExcelField.class).remark());
         });
-        table.setHead(titles);
+        if(this.needRemark){
+            this.write0(Arrays.asList(remarks), sheet, table);
+        }
+        this.write0(Arrays.asList(titles), sheet, table);
+        table.setHead(Arrays.asList(titles));
         return table;
     }
 
@@ -150,5 +160,22 @@ public class ExcelWriterCon extends ExcelWriter {
                     x2.getAnnotation(ExcelField.class).index());
         }).collect(Collectors.toList());
         return fieldlist;
+    }
+
+    /**
+     *
+     * @Title: getNeedRemark
+     * @Description: 是否需要备注信息
+     * @param clazz
+     * @return
+     */
+    private static boolean getNeedRemark(Class<?> clazz){
+        boolean needRemark = false;
+        boolean clzHasAnno = clazz.isAnnotationPresent(ExcelSheet.class);
+        if(clzHasAnno){
+            ExcelSheet sheetAnno = clazz.getAnnotation(ExcelSheet.class);
+            needRemark = sheetAnno.needRemark();
+        }
+        return needRemark;
     }
 }

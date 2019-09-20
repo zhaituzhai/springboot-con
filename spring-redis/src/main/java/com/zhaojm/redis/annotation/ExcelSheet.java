@@ -19,6 +19,9 @@ public @interface ExcelSheet {
      */
     String name() default "";
 
+    boolean needRemark() default false;
+
+
     /**
      * excel模板文件
      * @return

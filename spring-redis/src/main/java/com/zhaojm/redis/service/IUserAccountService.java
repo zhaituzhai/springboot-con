@@ -25,7 +25,7 @@ public interface IUserAccountService {
 
     void getPageUserByEasyExcel(int pagesize, ServletOutputStream os);
 
-    void getPageUserByCon(ServletOutputStream os);
+    void getPageUserByCon(ServletOutputStream os)  throws Exception;
 
     PageInfo<UserAccountDTO> getPageUser(UserQueryVO userVO);
 }

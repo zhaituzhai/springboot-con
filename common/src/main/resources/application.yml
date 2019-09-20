@@ -31,4 +31,9 @@ hystrix.command.default.execution.isolation.strategy: SEMAPHORE
 
 cxf.path: /webservice
 
-
+spring:
+  rabbitmq:
+    host: localhost
+    post: 5672
+    username: user
+    password: password

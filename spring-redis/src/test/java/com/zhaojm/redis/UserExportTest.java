@@ -69,7 +69,10 @@ public class UserExportTest {
         }
     }
 
-
+    public static void main(String[] args) {
+        String filename = "！@#￥%……&*\\r/r:r*r#$%^&*?r\\r\"r<r>r|r";
+        System.out.println(filename.replaceAll("[/|:|*|?|\"|<|>|\\\\]", "_"));
+    }
 
 
 }

@@ -12,6 +12,7 @@ import com.zhaojm.redis.mapper.IUserAccountMapper;
 import com.zhaojm.redis.service.IUserAccountService;
 import com.zhaojm.redis.utils.ExcelExportHelp;
 import com.zhaojm.redis.utils.ExcelWriterCon;
+import com.zhaojm.redis.utils.StyleExcelHandler;
 import com.zhaojm.redis.vo.UserQueryVO;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public class UserAccountServiceImpl implements IUserAccountService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserAccountServiceImpl.class);
     
-    private final int exportPageSize = 10000;
+    private final int exportPageSize = 1000;
 
     @Autowired
     private IUserAccountMapper userAccountMapper;
@@ -150,17 +151,19 @@ public class UserAccountServiceImpl implements IUserAccountService {
     }
 
     @Override
-    public void getPageUserByCon(ServletOutputStream os){
+    public void getPageUserByCon(ServletOutputStream os) throws Exception{
 
-        ExcelWriterCon writer = new ExcelWriterCon(os, null, UserAccountDTO.class);
+        StyleExcelHandler handler = new StyleExcelHandler();
+        ExcelWriterCon writer = new ExcelWriterCon(os, null, UserAccountDTO.class, handler);
         int nowPageNum = 1;
         while(true){
             PageHelper.startPage(nowPageNum++, exportPageSize, false);
             List<UserAccountDTO> appendUserList = userAccountMapper.getAllUser();
             writer.appendData(appendUserList);
-            if(appendUserList.size() < exportPageSize){
-                break;
-            }
+            break;
+//            if(appendUserList.size() < exportPageSize){
+//                  break;
+//            }
         }
         writer.finish();
     }

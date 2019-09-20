@@ -12,48 +12,48 @@ import java.util.Date;
 /**
  * @Author
  */
-@ExcelSheet(name = "用户信息")
+@ExcelSheet(name = "用户信息", needRemark = true)
 public class UserAccountDTO  extends BaseRowModel implements Serializable {
     //@ApiModelProperty("用户主键")
     @ExcelProperty(value="主键",index=0)
     @Excel(name = "主键", orderNum = "0")
-    @ExcelField(index = 1, name = "主键")
+    @ExcelField(index = 1, name = "主键", remark = "用户主键")
     private Integer userId;
 
     //@ApiModelProperty("用户名称（可做登陆）")
     @Excel(name = "姓名", orderNum = "1")
     @ExcelProperty(value="姓名",index=1)
-    @ExcelField(index = 2, name = "姓名")
+    @ExcelField(index = 2, name = "姓名", remark = "用户主键")
     private String userName;
 
     //@ApiModelProperty("用户手机号（登陆）")
     @Excel(name = "手机号", orderNum = "2")
     @ExcelProperty(value="手机号",index=2)
-    @ExcelField(index = 3, name = "手机号")
+    @ExcelField(index = 3, name = "手机号", remark = "必填")
     private String userPhone;
 
     //@ApiModelProperty("密码")
     @Excel(name = "密码", orderNum = "3")
     @ExcelProperty(value="密码",index=3)
-    @ExcelField(index = 4, name = "密码")
+    @ExcelField(index = 4, name = "密码", remark = "用户密码")
     private String password;
 
     //@ApiModelProperty("用户类型（1：管理员 2:医生 3：病人 4：普通用户")
     @Excel(name = "用户类型", orderNum = "4")
     @ExcelProperty(value="用户类型",index=4)
-    @ExcelField(index = 5, name = "用户类型")
+    @ExcelField(index = 5, name = "用户类型", remark = "用户类型1：管理员 2:医生 3：病人 4：普通用户")
     private String userType;
 
     //@ApiModelProperty("账户类型（开启/关闭）")
     @Excel(name = "账户类型", orderNum = "5")
     @ExcelProperty(value="账户类型",index=5)
-    @ExcelField(index = 6, name = "账户类型")
+    @ExcelField(index = 6, name = "账户类型", remark = "用户账户类型，0/1")
     private Integer accountType;
 
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @Excel(name = "創建時間", orderNum = "6" ,format = "yyyy-MM-dd")
     @ExcelProperty(value="創建時間",index=6,format = "yyyy-MM-dd")
-    @ExcelField(index = 7, name = "創建時間",format = "yyyy-MM-dd")
+    @ExcelField(index = 7, name = "創建時間",format = "yyyy-MM-dd", remark = "格式 yyyy-MM-dd")
     private Date creatTime;
 
     private static final long serialVersionUID = 1L;

@@ -65,4 +65,6 @@ public @interface ExcelField {
 
     String format() default "";
 
+    String remark() default "";
+
 }
