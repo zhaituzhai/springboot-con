@@ -11,15 +11,6 @@ import java.util.zip.ZipOutputStream;
 
 public class ZipFilesUtils {
 
-
-    /**
-     * <p>Description: [文件压缩打包工具]</p >
-     * Created on 2019年12月10日
-     *
-     * @author CJ
-     * @version 1.0
-     * Copyright (c) 2019
-     */
     private static final Logger log = Logger.getLogger(ZipFilesUtils.class);
 
     private static final byte[] BUF = new byte[1024];

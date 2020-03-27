@@ -5,7 +5,6 @@ import java.lang.annotation.*;
 /**
  * 表信息
  *
- * @author tuyl 2018-10-08
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

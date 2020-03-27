@@ -10,10 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * api request field, reflect util
- * @author tuyl
- */
 public final class FieldReflectionUtil {
 
 	private FieldReflectionUtil(){}

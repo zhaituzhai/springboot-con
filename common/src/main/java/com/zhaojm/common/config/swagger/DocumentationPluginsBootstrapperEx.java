@@ -14,14 +14,6 @@ import springfox.documentation.spring.web.scanners.ApiDocumentationScanner;
 import javax.servlet.ServletContext;
 import java.util.List;
 
-/****
- * 
- * <pre>类名: SwaggerConfiguration</pre>
- * <pre>描述: 扩展Swagger2 扫描插件</pre>
- * <pre>版权: 深圳航天信息</pre>
- * <pre>日期: 2017年8月25日 下午1:50:30</pre>
- * @author wangxb
- */
 @Component
 public class DocumentationPluginsBootstrapperEx extends DocumentationPluginsBootstrapper {
 	

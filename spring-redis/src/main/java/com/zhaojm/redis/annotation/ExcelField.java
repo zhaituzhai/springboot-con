@@ -7,8 +7,6 @@ import java.lang.annotation.*;
  *
  *      支持Java对象数据类型：Boolean、String、Short、Integer、Long、Float、Double、Date
  *      支持Excel的Cell类型为：String
- *
- * @author tuyl 2018-10-08
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
