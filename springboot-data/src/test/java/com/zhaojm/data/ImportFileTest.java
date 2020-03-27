@@ -1,14 +1,6 @@
 package com.zhaojm.data;
 
-import static org.junit.Assert.assertTrue;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.junit.AfterClass;
+import com.zhaojm.data.service.IDealStatueService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zhaojm.data.service.IDealStatueService;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -30,8 +27,8 @@ public class ImportFileTest {
     
     @Test
     public void testUpload() throws FileNotFoundException{
-        FileInputStream file1 = new FileInputStream("E:\\Aisino\\ETCLOUD\\etc开发\\ETC3\\etc3.5\\test1.xlsx");
-        FileInputStream file2 = new FileInputStream("E:\\Aisino\\ETCLOUD\\etc开发\\ETC3\\etc3.5\\test2.xlsx");
+        FileInputStream file1 = new FileInputStream("E:\\test1.xlsx");
+        FileInputStream file2 = new FileInputStream("E:\\test2.xlsx");
 //        ResultDTO<Integer> result = medicineController.importMedicine((MultipartFile) file);
 //        byte[] xmlByte = file.?
         int result = dealStatueService.toParse(file1,0);
